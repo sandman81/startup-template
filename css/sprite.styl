@@ -1,0 +1,44 @@
+/*
+ * Image replacement
+ */
+
+ir() 
+    background-color transparent
+    border 0
+    display block
+    overflow hidden
+    /* IE 6/7 fallback */
+    *text-indent -9999px
+    &:before 
+        content ""
+        display block
+        width 0
+        height 100%
+
+.sprite-sprite
+.sprite-icon-info-1
+.sprite-icon-info-2
+.sprite-icon-info-3
+.sprite-icon-logo 
+    background transparent url('sprite.png') no-repeat
+    ir() 
+
+.sprite-icon-info-1
+    width 134px
+    height 134px
+    background-position 0px 0px
+
+.sprite-icon-info-2
+    width 116px
+    height 137px
+    background-position -134px 0px
+
+.sprite-icon-info-3
+    width 116px
+    height 140px
+    background-position -250px 0px
+
+.sprite-icon-logo
+    width 39px
+    height 40px
+    background-position -366px 0px

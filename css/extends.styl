@@ -1,0 +1,160 @@
+//placeholder
+placeholder()
+    &::-webkit-input-placeholder
+        {block}
+    &:-moz-placeholder
+        {block}
+    &::-moz-placeholder
+        {block}
+    &:-ms-input-placeholder
+        {block}
+
+//buttons
+
+.red-button
+    cursor pointer
+    user-select none
+    height 36px
+    background redColor
+    text-transform uppercase
+    border none
+    color white
+    font-size 10px
+    border-radius 4px
+    letter-spacing 2px
+    
+// titles
+
+.block-title
+    text-align center
+    font-weight normal
+    font-size 48px
+    font-family fontLight
+    color grayTitle
+    margin-bottom 60px
+    
+// animations
+
+@keyframes arrowHeight 
+    from 
+        height 73px
+    to 
+        height 90px
+
+@keyframes earthRotate 
+    from 
+        transform rotate(0deg) translateX(20%) rotate(0deg)
+    to 
+        transform rotate(360deg) translateX(20%) rotate(-360deg)
+
+@keyframes squareMove 
+    50%
+        transform translateY(100%)
+
+
+//figures
+
+.round-figure
+    position absolute
+    width 13px
+    height 13px
+    border-radius 7px
+    background rgba(grayFigure, 0.5)
+    animation 3s earthRotate infinite linear
+
+.square-figure
+    position absolute
+    width 12px
+    height 12px
+    background rgba(grayFigure, 0.3)
+    animation 5s squareMove infinite linear
+
+.bottom-triangle-figure
+    position absolute
+    width 0
+    height 0
+    border-style solid
+    border-width 17px 8.5px 0 8.5px
+    border-color rgba(grayFigure, 0.5) transparent transparent transparent
+    animation 3s earthRotate infinite linear reverse
+
+.bottom-triangle-figure-2
+    position absolute
+    width 0
+    height 0
+    border-style solid
+    border-width 14px 9px 0 9px
+    border-color rgba(grayFigure, 0.5) transparent transparent transparent
+    animation 3s earthRotate infinite linear reverse
+
+.right-triangle-figure
+    position absolute
+    width 0
+    height 0
+    border-style solid
+    border-width 9px 0 9px 14px
+    border-color transparent transparent transparent rgba(grayFigure, 0.5)
+    animation 3s earthRotate infinite linear reverse
+
+.left-triangle-figure
+    position absolute
+    width 0
+    height 0
+    border-style solid
+    border-width 8.5px 6px 8.5px 0
+    border-color transparent rgba(grayFigure, 0.5) transparent transparent
+    animation 3s earthRotate infinite linear reverse
+
+//flexbox
+
+.box-row,
+.box-col
+    display flex
+
+.box-row
+    flex-direction row
+
+.box-col
+    flex-direction column
+
+.box-wrap
+    flex-wrap wrap
+
+.space-between
+    justify-content space-between
+
+.space-center
+    justify-content center
+
+.space-end
+    justify-content flex-end  
+
+.space-start
+    justify-content flex-start  
+
+.align-center
+    align-items center
+
+.align-end
+    align-items flex-end
+
+.align-baseline
+    align-items baseline
+
+.self-center
+    align-self center
+
+.self-end
+    align-self flex-end
+
+.self-start
+    align-self flex-start
+
+
+/* Required */
+
+.hidden
+    opacity 0
+
+.visible
+    opacity 1

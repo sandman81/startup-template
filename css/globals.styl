@@ -1,0 +1,73 @@
+*
+    margin 0
+    padding 0
+
+html
+    height 100%
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary
+    display block
+
+body
+    font 16px fontReg, Tahoma, sans-serif
+    height 100%
+    color defColor
+    line-height 1
+    overflow-x hidden
+    min-height 100vh
+
+.layout-body
+    height 100vh
+    min-height 100vh
+
+.layout-wrapper
+    min-width 320px
+    flex 1 0 auto
+
+a 
+    outline none
+    text-decoration underline
+    color redColor
+    &:hover
+        text-decoration none  
+p 
+    margin 0
+
+img 
+    border none
+    max-width 100%
+    height auto
+
+input,
+textarea,
+button
+    font-family fontReg, Tahoma, sans-serif
+    font-size 12px
+    vertical-align middle
+    outline none
+    color defColor
+    box-sizing border-box
+
+.content-center
+    max-width 1160px
+    margin 0 auto
+    height 100%
+    position relative
+    box-sizing border-box
+    border-left 1px solid red
+    border-right 1px solid red
+    // @media screen and (max-width: 1200px)
+    //     margin 0 25px
+    // @media screen and (max-width: 767px)
+    //     margin 0 10px
+
+input,
+textarea
+    +placeholder()
+        color placeholderColor
+        opacity 1
+    &:focus
+        +placeholder()
+            opacity 0
+
+
