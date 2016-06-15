@@ -48,7 +48,21 @@ $(function(){
 	    margin: 29,
 	    items: 6,
 	    mouseDrag: false
-	})
+	});
+
+	// dates animates
+
+	$('.js-programm-date').addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeInDown', 
+        repeat: true,
+		offset: 100 
+    });
+
+    $('.programm-content-tour-date_title_mark').viewportChecker({
+        classToAdd: 'pulse', 
+        repeat: true,
+		offset: 100 
+    });
 
 
 	 
