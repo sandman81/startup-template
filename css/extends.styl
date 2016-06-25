@@ -1,3 +1,49 @@
+//flexbox
+
+.box-row,
+.box-col
+    display flex
+
+.box-row
+    flex-direction row
+
+.box-col
+    flex-direction column
+
+.box-wrap
+    flex-wrap wrap
+
+.space-between
+    justify-content space-between
+
+.space-center
+    justify-content center
+
+.space-end
+    justify-content flex-end  
+
+.space-start
+    justify-content flex-start  
+
+.align-center
+    align-items center
+
+.align-end
+    align-items flex-end
+
+.align-baseline
+    align-items baseline
+
+.self-center
+    align-self center
+
+.self-end
+    align-self flex-end
+
+.self-start
+    align-self flex-start
+    
+    
 //placeholder
 placeholder()
     &::-webkit-input-placeholder
@@ -8,42 +54,6 @@ placeholder()
         {block}
     &:-ms-input-placeholder
         {block}
-
-//buttons
-
-.red-button
-    cursor pointer
-    user-select none
-    height 36px
-    background redColor
-    text-transform uppercase
-    border none
-    color white
-    font-size 10px
-    border-radius 4px
-    letter-spacing 2px
-
-.yellow-button
-    cursor pointer
-    user-select none
-    height 40px
-    background yellowColor2
-    text-transform uppercase
-    border none
-    color white
-    font-size 10px
-    border-radius 4px
-    letter-spacing 2px
-    
-// titles
-
-.block-title
-    text-align center
-    font-weight normal
-    font-size 48px
-    font-family fontLight
-    color grayTitle
-    margin-bottom 60px
     
 // animations
 
@@ -134,50 +144,57 @@ placeholder()
     border-color transparent rgba(grayFigure, 0.5) transparent transparent
     animation 3s earthRotate infinite linear reverse
 
-//flexbox
 
-.box-row,
-.box-col
-    display flex
+//buttons
 
-.box-row
-    flex-direction row
+.red-button
+    cursor pointer
+    user-select none
+    height 36px
+    background redColor
+    text-transform uppercase
+    border none
+    color white
+    font-size 10px
+    border-radius 4px
+    letter-spacing 2px
 
-.box-col
-    flex-direction column
+.yellow-button
+    cursor pointer
+    user-select none
+    height 40px
+    background yellowColor2
+    text-transform uppercase
+    border none
+    color white
+    font-size 10px
+    border-radius 4px
+    letter-spacing 2px
 
-.box-wrap
-    flex-wrap wrap
+.blue-button
+    @extend .box-row
+    @extend .align-center
+    @extend .space-center
+    cursor pointer
+    user-select none
+    height 40px
+    background blueColor3
+    text-transform uppercase
+    border none
+    color white
+    font-size 10px
+    border-radius 4px
+    letter-spacing 2px
+    
+// titles
 
-.space-between
-    justify-content space-between
-
-.space-center
-    justify-content center
-
-.space-end
-    justify-content flex-end  
-
-.space-start
-    justify-content flex-start  
-
-.align-center
-    align-items center
-
-.align-end
-    align-items flex-end
-
-.align-baseline
-    align-items baseline
-
-.self-center
-    align-self center
-
-.self-end
-    align-self flex-end
-
-.self-start
-    align-self flex-start
+.block-title
+    text-align center
+    font-weight normal
+    font-size 48px
+    font-family fontLight
+    color grayTitle
+    margin-bottom 60px
 
 
 /* Required */
@@ -187,3 +204,4 @@ placeholder()
 
 .visible
     opacity 1
+
