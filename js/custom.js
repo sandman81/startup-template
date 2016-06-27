@@ -1,28 +1,31 @@
-$(window).load(function(){
-
-	// about parallax
-
-	$(window).stellar({
-		horizontalOffset: 0
-	});
-
-	
-
-    
-
-
-
-
-
-
-
-
-
-});
-
-
-
 $(function(){
+
+	// gallery lightbox
+
+    $('.gallery-section-content a').magnificPopup({
+	  type: 'image',
+	  fixedContentPos: false,
+	  overflowY: 'hidden',
+	  gallery:{
+	    enabled:true
+	  },
+	  mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+	  zoom: {
+	    enabled: true, // By default it's false, so don't forget to enable it
+	    duration: 300, // duration of the effect, in milliseconds
+	    easing: 'ease-in-out', // CSS transition easing function
+
+	    // The "opener" function should return the element from which popup will be zoomed in
+	    // and to which popup will be scaled down
+	    // By defailt it looks for an image tag:
+	    opener: function(openerElement) {
+	      // openerElement is the element on which popup was initialized, in this case its <a> tag
+	      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+	      return openerElement.is('img') ? openerElement : openerElement.find('img');
+	    }
+	  }
+
+	});
 
 	// about parallax
 
@@ -63,6 +66,64 @@ $(function(){
         repeat: true,
 		offset: 100 
     });
+
+    // reviews slider
+
+    $('.js-reviews-list').owlCarousel({
+	    margin: 28,
+	    items: 3,
+	    mouseDrag: false
+	});
+
+	// graduates slider
+
+	$('.js-graduates-list').owlCarousel({
+	    margin: 0,
+	    items: 4,
+	    nav: true,
+	    mouseDrag: false
+	});
+
+
+	// facts counts 
+
+	$('.facts-section').viewportChecker({
+        callbackFunction: function(){
+        	$(".js-spincrement").spincrement({
+		        from: 0,
+		        duration: 3000
+		    });
+
+		    $(".js-circle-count-1").circliful({
+		        animationStep: 5,
+		        foregroundBorderWidth: 20,
+		        backgroundBorderWidth: 20,
+		        foregroundColor: '#f2b02a',
+		        backgroundColor: '#2f67c6',
+		        fontColor: 'transparent',
+		        percent: 65
+		    });
+
+		    $(".js-circle-count-2").circliful({
+		        animationStep: 5,
+		        foregroundBorderWidth: 20,
+		        backgroundBorderWidth: 20,
+		        foregroundColor: '#f2b02a',
+		        backgroundColor: '#2f67c6',
+		        fontColor: 'transparent',
+		        percent: 85
+		    });
+
+        }
+    });
+
+    
+
+
+    
+    
+
+	
 
 
 	 
@@ -116,3 +177,26 @@ $(function(){
 });
 
 
+
+
+$(window).load(function(){
+
+	// about parallax
+
+	$(window).stellar({
+		horizontalOffset: 0
+	});
+
+	
+
+    
+
+
+
+
+
+
+
+
+
+});

@@ -148,6 +148,9 @@ placeholder()
 //buttons
 
 .red-button
+    @extend .box-row
+    @extend .align-center
+    @extend .space-center
     cursor pointer
     user-select none
     height 36px
@@ -160,6 +163,9 @@ placeholder()
     letter-spacing 2px
 
 .yellow-button
+    @extend .box-row
+    @extend .align-center
+    @extend .space-center
     cursor pointer
     user-select none
     height 40px
@@ -199,9 +205,17 @@ placeholder()
 
 /* Required */
 
+.text-center
+    text-align center
+
 .hidden
     opacity 0
 
 .visible
     opacity 1
+    
+*[class*='sprite-icon']
+    &:before
+        display none
+
 
