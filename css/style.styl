@@ -404,22 +404,30 @@
             border 1px solid white
             border-radius 4px
     &-list
+        .modal-popup &
+            margin 0 -35px -30px 0
         &-item
             width 169px
+            .modal-popup &
+                margin 0 27px 30px 0
             &-info
                 flex 0 0 292px
+                .modal-popup &
+                    border 1px solid #ebebeb
+                    border-top none
+                    border-bottom-color #dadada
+                    border-radius 5px
+                    box-shadow 0 1px 0 #ebebeb
                 img
                     flex 0 0 190px
-                    border-top-right-radius 4px
-                    border-top-left-radius 4px
+                    border-radius top 5px
                 &-text
                     background white
                     flex 0 0 102px
                     padding-top 20px
                     box-sizing border-box
                     text-align center
-                    border-bottom-right-radius 4px
-                    border-bottom-left-radius 4px
+                    border-radius bottom 5px
                 &_title
                     font-size 14px
                     color grayTitle
@@ -448,6 +456,13 @@
                 white-space nowrap
                 box-sizing border-box
                 transition background 250ms
+                .modal-popup &
+                    background #e6e6e6
+                    color yellowColor2
+                    &:hover
+                        color white
+                        &:before
+                            border-color transparent transparent transparent white
                 &:before
                     content ''    
                     width 0
@@ -456,6 +471,8 @@
                     border-width 9.5px 0 9.5px 11px
                     border-color transparent transparent transparent white
                     margin-right 10px
+                    .modal-popup &
+                        border-color transparent transparent transparent yellowColor2
                 &:hover
                     background redColor2
                                 
@@ -841,13 +858,21 @@
         width 130px
         margin-bottom 40px
     &-list
+        .modal-popup &
+            margin 0 20px 0 0
         &-item
+            flex 0 0 368px
+            margin-right 28px
+            .modal-popup &
+                margin 0 0 90px
+                flex 0 0 540px
             &_pic
-                flex 0 0 65px
-                height 65px
-                border 3px solid #ffce6c
-                border-radius (65px / 2)
+                flex 0 0 71px
+                height 71px
+                background #ffce6c
+                border-radius (71px / 2)
                 margin-right 28px
+                box-sizing border-box
                 img
                     width 65px
                     height 65px
@@ -860,14 +885,20 @@
                     border-bottom 1px solid rgba(white, 0.2)
                     margin-bottom 22px
                     padding-right 11px
+                    .modal-popup &
+                        border-bottom-color #d4d4d4
                     &-text
                         &_name
                             font-size 18px
                             margin-bottom 3px
+                            .modal-popup &
+                                color #5f5f5f
                         &_special
                             font-size 14px
                             font-family fontLight
                             color yellowColor4
+                            .modal-popup &
+                                color yellowColor2
                     &_video-button
                         cursor pointer
                         flex 0 0 33px
@@ -887,6 +918,9 @@
                     font-family fontLight
                     line-height 1.3
                     font-size 14px
+                    .modal-popup &
+                        color #b4b4b4
+                    
 
 .graduates-section
     background grayBg
@@ -909,6 +943,10 @@
         color yellowColor2
         margin-bottom 50px
     &-list
+        .modal-popup &:not(:last-child)
+            padding-bottom 45px
+            margin-bottom 45px
+            border-bottom 1px solid #e7e7e7
         &-item
             width 215px
             margin 0 auto
@@ -1244,7 +1282,7 @@
 .footer-content
     height 100%
     box-sizing border-box
-    padding 55px 100px 5px
+    padding 55px 100px 10px
     &-top
         flex 0 0 175px
         &-buttons
@@ -1289,9 +1327,92 @@
     &-bottom
         &_copy
             color #aaa9a9 
-            font-size 12px      
-                      
+            font-size 12px  
+            font-family fontAvenirReg
+            line-height 1.3
+            a
+                text-decoration none
+                font-weight bold
+                font-style italic
+                font-family fontAvenirDemi    
+                color #aaa9a9
+        &_links
+            a
+                margin-left 15px
+             
+.modal-content
+    position fixed
+    width 100%
+    height 100%
+    left 0
+    top 0
+    z-index 100   
+    background rgba(black, 0.7)
+    &-center
+        height 100%
+    &:not(.active)
+        display none
 
+.modal-popup
+    // flex 0 0 1200px
+    width 1200px
+    background popupBgColor
+    z-index 101          
+    &-top
+        box-sizing border-box
+        flex 0 0 70px          
+        background white
+        border-bottom 1px solid popupBordColor
+        &_title
+            margin-left 22px
+            font-size 18px
+            font-family fontLight
+            color yellowColor2
+        &-tabs
+            height 69px
+            &_button
+                cursor pointer
+                user-select none
+                box-sizing border-box
+                flex 0 0 135px
+                border-right 1px solid popupBordColor
+                font-size 18px
+                font-family fontLight
+                color #9a9a9a
+                transition all 250ms
+                &.active
+                    color yellowColor2
+                    box-shadow inset 0 -3px 0 yellowColor2
+        &_closed-button
+            cursor pointer
+            flex 0 0 75px
+            border-left 1px solid popupBordColor
+            position relative
+            height 69px
+            &:before,
+            &:after
+                content ''
+                position absolute
+                left 50%
+                top 50%
+                width 18px
+                height 2px
+                background #95999e
+            &:before
+                transform translate(-50%, -50%) rotate(45deg)
+            &:after
+                transform translate(-50%, -50%) rotate(-45deg)
+    &-content
+        padding 20px 20px 30px
+        box-sizing border-box
+        overflow-y auto    
+        overflow-x hidden
+        .js-modal-graduates &
+            padding 30px 0
+        &-users
+            &:not(.active)
+                display none
+                
 
 
 

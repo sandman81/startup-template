@@ -67,14 +67,6 @@ $(function(){
 		offset: 100 
     });
 
-    // reviews slider
-
-    $('.js-reviews-list').owlCarousel({
-	    margin: 28,
-	    items: 3,
-	    mouseDrag: false
-	});
-
 	// graduates slider
 
 	$('.js-graduates-list').owlCarousel({
@@ -116,6 +108,14 @@ $(function(){
 
         }
     });
+
+
+    // modal tabs
+
+	$('.modal-popup-top-tabs').delegate('.modal-popup-top-tabs_button:not(.active)', 'click', function() {
+      $(this).addClass('active').siblings().removeClass('active').closest('.modal-popup').find('.modal-popup-content-users').eq($(this).index()).fadeIn(200).siblings('.modal-popup-content-users').hide();
+    });
+
 
     
 
