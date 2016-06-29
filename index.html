@@ -26,15 +26,15 @@
 			<header class="layout-header">
 				<div class="content-center">
 					<div class="header-content box-row align-center space-between">
-						<a href="#" class="header-content_logo sprite-icon-logo"></a>
+						<a href="/" class="header-content_logo sprite-icon-logo"></a>
 						<div class="header-content-buttons box-row align-center space-end">
 							<nav class="top-menu box-row">
-								<div class="top-menu_button">о лагере</div>
-								<div class="top-menu_button">отзывы</div>
-								<div class="top-menu_button">выпускники</div>
-								<div class="top-menu_button">контакты</div>
+								<div class="top-menu_button js-top-button-1">о лагере</div>
+								<div class="top-menu_button js-top-button-2">отзывы</div>
+								<div class="top-menu_button js-top-button-3">выпускники</div>
+								<div class="top-menu_button js-top-button-4">контакты</div>
 							</nav>
-							<div class="header-content-buttons_reg red-button box-row align-center space-center">регистрация</div>
+							<div class="header-content-buttons_reg red-button box-row align-center space-center js-register-button">регистрация</div>
 						</div>
 					</div>
 				</div>
@@ -42,6 +42,13 @@
 			<section class="layout-content">
 				<div class="top-video">
 					<img src="img/header.jpg" alt="" class="top-video_img">
+					<div class="top-video_video">
+						<video autoplay="" loop="" muted="" poster="">
+				            <source src="video/top-video.webm" type="video/webm">
+				            <source src="video/top-video.mp4" type="video/mp4">
+				            <!-- <source src="video/top-video.ogv" type="video/ogv"> -->
+				        </video>
+			        </div>
 					<div class="content-center">
 						<div class="top-video-content box-row align-center">
 							<div class="top-video-content-info box-col space-center">
@@ -56,7 +63,7 @@
 								<div class="bottom-triangle-figure"></div>
 								<div class="left-triangle-figure"></div>
 							</div>
-							<div class="top-video-content_video-but box-row space-center align-center animated"></div>
+							<div class="top-video-content_video-but box-row space-center align-center animated js-video-button" video-source="https://www.youtube.com/embed/5-80d0TLtHU?rel=0&amp;showinfo=0&amp;autoplay=1"></div>
 							<div class="round-figure"></div>
 							<div class="square-figure"></div>
 						</div>
@@ -92,10 +99,10 @@
 								<div class="dates-content-info_date">03.08-09.08</div>
 								<div class="dates-content-info_desc">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</div>
 								<div class="dates-content-info-buttons box-row">
-									<div class="dates-content-info-buttons_but">Для кого?</div>
-									<div class="dates-content-info-buttons_but">Программа</div>
-									<div class="dates-content-info-buttons_but">Место</div>
-									<div class="dates-content-info-buttons_but">Стоимость</div>
+									<div class="dates-content-info-buttons_but js-info-button-1">Для кого?</div>
+									<div class="dates-content-info-buttons_but js-info-button-2">Программа</div>
+									<div class="dates-content-info-buttons_but js-info-button-3">Место</div>
+									<div class="dates-content-info-buttons_but js-info-button-4">Стоимость</div>
 								</div>
 							</div>
 						</div>
@@ -145,7 +152,7 @@
 							<div class="users-content-top box-col align-center">
 								<h2 class="block-title">Спикеры</h2>
 								<div class="users-content-top_desc">Дней обучения по авторской программе с бизнес-экспертами</div>
-								<div class="users-content-top_button box-col align-center space-center">все спикеры</div>
+								<div class="users-content-top_button box-col align-center space-center js-all-speakers-button">все спикеры</div>
 							</div>
 							<div class="users-content-list js-users-list owl-carousel">
 								<div class="users-content-list-item box-col align-center">
@@ -156,7 +163,7 @@
 											<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
 										</div>
 									</div>
-									<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+									<div class="users-content-list-item_video-but box-row align-center js-video-button" video-source="https://www.youtube.com/embed/YLscszse55E?rel=0&amp;showinfo=0&amp;autoplay=1">Смотреть видео</div>
 								</div>
 								<div class="users-content-list-item box-col align-center">
 									<div class="users-content-list-item-info box-col">
@@ -221,7 +228,7 @@
 							<div class="users-content-top box-col align-center">
 								<h2 class="block-title">Менторы</h2>
 								<div class="users-content-top_desc">Дней обучения по авторской программе с бизнес-экспертами</div>
-								<div class="users-content-top_button box-col align-center space-center">все менторы</div>
+								<div class="users-content-top_button box-col align-center space-center js-all-mentors-button">все менторы</div>
 							</div>
 							<div class="users-content-list js-users-list owl-carousel">
 								<div class="users-content-list-item box-col align-center">
@@ -442,7 +449,7 @@
 						<div class="place-content-box box-col align-center">
 							<h2 class="block-title">Место проведения</h2>
 							<div class="place-content_desc">Традиционно, отель – место временного проживания путешественников. Став гостем Relax Park VERHOLY, Вы поймёте разницу между стандартным предоставлением ночлега с комплектом предсказуемого сервиса и настоящей индустрией гостеприимства.</div>
-							<div class="yellow-button box-row space-center align-center">смотреть галерею</div>
+							<div class="yellow-button box-row space-center align-center js-gallery-button">смотреть галерею</div>
 							<div class="square-figure"></div>
 							<div class="round-figure"></div>
 							<div class="bottom-triangle-figure"></div>
@@ -495,7 +502,7 @@
 											<div class="price-section-counts-item-bottom_desc">
 												проживание в спа - комплексе Verholy 5* (5 ночей)  в номере категории <span>Стандарт</span>
 											</div>
-											<div class="price-section-counts-item-bottom_button blue-button">забронировать</div>
+											<div class="price-section-counts-item-bottom_button blue-button js-register-button">забронировать</div>
 										</div>
 									</div>
 								</div>
@@ -513,7 +520,7 @@
 											<div class="price-section-counts-item-bottom_desc">
 												проживание в спа - комплексе Verholy 5* (5 ночей) в номере категории <span>Стандарт</span>
 											</div>
-											<div class="price-section-counts-item-bottom_button blue-button">забронировать</div>
+											<div class="price-section-counts-item-bottom_button blue-button js-register-button">забронировать</div>
 										</div>
 									</div>
 								</div>
@@ -532,7 +539,7 @@
 											<div class="price-section-counts-item-bottom_desc">
 												проживание в спа - комплексе Verholy 5* (5 ночей)  в номере категории <span>Стандарт</span>
 											</div>
-											<div class="price-section-counts-item-bottom_button blue-button">забронировать</div>
+											<div class="price-section-counts-item-bottom_button blue-button js-register-button">забронировать</div>
 										</div>
 									</div>
 								</div>
@@ -553,7 +560,7 @@
 						<div class="reviews-section-content box-col align-center">
 							<h2 class="block-title">Отзывы</h2>
 							<div class="reviews-section_desc text-center">Традиционно, отель – место временного проживания <br> путешественников. Став гостем</div>
-							<div class="reviews-section_all-button yellow-button">все отзывы</div>
+							<div class="reviews-section_all-button yellow-button js-all-reviews-button">все отзывы</div>
 							<div class="reviews-section-list box-row">
 								<div class="reviews-section-list-item box-row">
 									<div class="reviews-section-list-item_pic box-row align-center space-center">
@@ -607,7 +614,7 @@
 						<div class="graduates-section-content box-col align-center">
 							<h2 class="block-title">Выпускники</h2>
 							<div class="graduates-section_desc text-center">Традиционно, отель – место временного проживания <br>путешественников. Став гостем </div>
-							<div class="graduates-section_all-button yellow-button">все выпускники</div>
+							<div class="graduates-section_all-button yellow-button js-all-graduates-button">все выпускники</div>
 							<div class="graduates-section-list js-graduates-list owl-carousel">
 								<div class="graduates-section-list-item box-col align-center">
 									<div class="graduates-section-list-item_logo box-row align-center space-center">
@@ -817,16 +824,16 @@
 					<div class="footer-content-top box-row space-between">
 						<div class="footer-content-top-buttons box-row">
 							<div class="footer-content-top-buttons-menu-1 box-col space-between">
-								<div class="footer-content-top-buttons-menu-1_button">О лагере</div>
-								<div class="footer-content-top-buttons-menu-1_button">Отзывы</div>
-								<div class="footer-content-top-buttons-menu-1_button">Выпускники</div>
-								<div class="footer-content-top-buttons-menu-1_button">Контакты</div>
+								<div class="footer-content-top-buttons-menu-1_button js-top-button-1">О лагере</div>
+								<div class="footer-content-top-buttons-menu-1_button js-top-button-2">Отзывы</div>
+								<div class="footer-content-top-buttons-menu-1_button js-top-button-3">Выпускники</div>
+								<div class="footer-content-top-buttons-menu-1_button js-top-button-4">Контакты</div>
 							</div>
 							<div class="footer-content-top-buttons-menu-2 box-col space-between">
-								<div class="footer-content-top-buttons-menu-2_button">Для кого?</div>
-								<div class="footer-content-top-buttons-menu-2_button">Программа</div>
-								<div class="footer-content-top-buttons-menu-2_button">Место</div>
-								<div class="footer-content-top-buttons-menu-2_button">Стоимость</div>
+								<div class="footer-content-top-buttons-menu-2_button js-info-button-1">Для кого?</div>
+								<div class="footer-content-top-buttons-menu-2_button js-info-button-2">Программа</div>
+								<div class="footer-content-top-buttons-menu-2_button js-info-button-3">Место</div>
+								<div class="footer-content-top-buttons-menu-2_button js-info-button-4">Стоимость</div>
 							</div>
 						</div>
 						<div class="footer-content-top-subs">
@@ -851,7 +858,7 @@
 				</div>
 			</div>
 		</footer>
-		<div class="modal-content box-col align-center js-modal-users">
+		<div class="modal-content box-col align-center animated fadeIn js-modal-speakers">
 			<div class="modal-popup box-col space-center">
 				<div class="modal-popup-top box-row align-center space-between">
 					<div class="modal-popup-top-tabs box-row">
@@ -1062,7 +1069,218 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal-content box-col align-center js-modal-reviews">
+		<div class="modal-content box-col align-center animated fadeIn js-modal-mentors">
+			<div class="modal-popup box-col space-center">
+				<div class="modal-popup-top box-row align-center space-between">
+					<div class="modal-popup-top-tabs box-row">
+						<div class="modal-popup-top-tabs_button box-row align-center space-center active">Менторы</div>
+						<div class="modal-popup-top-tabs_button box-row align-center space-center">Спикеры</div>
+					</div>
+					<div class="modal-popup-top_closed-button"></div>
+				</div>
+				<div class="modal-popup-content">
+					<div class="modal-popup-content-users active">
+						<div class="users-content-list box-row box-wrap">
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-1.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Алексей Малыцкий</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-2.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Анна Петрова</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-3.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Валерия Чичибая</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-4.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Евгений Евтухов</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-5.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Лидия Билас</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>		
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-6.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Надя Перевизнык</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-1.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Алексей Малыцкий</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-2.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Анна Петрова</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-3.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Валерия Чичибая</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-4.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Евгений Евтухов</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-5.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Лидия Билас</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>		
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-6.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Надя Перевизнык</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-popup-content-users">
+						<div class="users-content-list box-row box-wrap">
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-1.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Алексей Малыцкий</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-2.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Анна Петрова</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-3.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Валерия Чичибая</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-4.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Евгений Евтухов</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-1.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Алексей Малыцкий</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-2.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Анна Петрова</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-3.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Валерия Чичибая</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>
+								</div>
+							</div>
+							<div class="users-content-list-item box-col align-center">
+								<div class="users-content-list-item-info box-col">
+									<img src="img/temp/user-4.jpg" alt="">
+									<div class="users-content-list-item-info-text box-col align-center">
+										<div class="users-content-list-item-info_title">Евгений Евтухов</div>
+										<div class="users-content-list-item-info_special">Co-founder компании Sammy Icon</div>
+									</div>	
+								</div>
+								<div class="users-content-list-item_video-but box-row align-center">Смотреть видео</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal-content box-col align-center animated fadeIn js-modal-reviews">
 			<div class="modal-popup box-col space-center">
 				<div class="modal-popup-top box-row align-center space-between">
 					<div class="modal-popup-top_title">Отзывы</div>
@@ -1131,7 +1349,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal-content box-col align-center js-modal-graduates">
+		<div class="modal-content box-col align-center animated fadeIn js-modal-graduates">
 			<div class="modal-popup box-col space-center">
 				<div class="modal-popup-top box-row align-center space-between">
 					<div class="modal-popup-top_title">Выпускники</div>
@@ -1205,7 +1423,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="modal-content box-row space-center align-center js-modal-register">
+		<div class="modal-content box-row space-center animated fadeIn align-center js-modal-register">
 			<div class="register-popup box-col align-center space-end">
 				<div class="register-popup_title">Спасибо за регистрацию!</div>
 				<div class="register-popup_desc text-center">Далеко-далеко за словесными горами в стране<br> гласных и согласных живут рыбные тексты. Вдали<br> от всех живут они в буквенных домах</div>
@@ -1213,7 +1431,10 @@
 				<div class="register-popup_closed"></div>
 			</div>
 		</div>
-
+		<div class="modal-video animated fadeIn js-video-modal">
+			<iframe width="100%" height="100%" src="" frameborder="0" allowfullscreen=""></iframe>
+			<div class="modal-video_closed-button js-video-modal-closed"></div>
+		</div>
 	</div>
 </body>
 </html>

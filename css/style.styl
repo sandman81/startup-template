@@ -56,6 +56,20 @@
         top 0
         left 0
         object-fit cover
+        display none
+    &_video
+        position absolute
+        width 100%
+        height 100%
+        left 0
+        top 0
+        overflow hidden
+        video
+            position absolute
+            left 0
+            top 0
+            min-height 100%
+            min-width 100%
     &:after
         content ''
         width 100%
@@ -171,6 +185,8 @@
             box-shadow 0 2px 2px rgba(black, 0.2)
             animation pulse 2s infinite
             z-index 2
+            box-sizing border-box
+            padding-left 8px
             &:before
                 content ''
                 width 0
@@ -1347,13 +1363,14 @@
     top 0
     z-index 100   
     background rgba(black, 0.7)
+    animation-duration 300ms
     &:not(.active)
         display none
 
 .modal-popup
     width 1200px
     flex 1 0 0
-    z-index 101          
+    z-index 101         
     &-top
         box-sizing border-box
         flex 0 0 70px          
@@ -1500,5 +1517,35 @@
         &:after
             transform translate(-50%, -50%) rotate(-45deg)
             
+.modal-video
+    position fixed
+    width 100%
+    height 100%
+    left 0
+    top 0
+    z-index 100
+    &:not(.active)
+        display none
+    &_closed-button
+        position absolute
+        top 30px
+        right 60px
+        width 40px
+        height 40px
+        cursor pointer
+        background white
+        &:before,
+        &:after
+            content ''
+            position absolute
+            left 50%
+            top 50%
+            width 18px
+            height 2px
+            background #95999e
+        &:before
+            transform translate(-50%, -50%) rotate(45deg)
+        &:after
+            transform translate(-50%, -50%) rotate(-45deg)
             
 
