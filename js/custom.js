@@ -2,14 +2,20 @@ $(function(){
 
 	// gallery lightbox
 
-    $('.gallery-section-content a').magnificPopup({
+    $('.gallery-section-content').magnificPopup({
 	  type: 'image',
+	  delegate: 'a',
 	  fixedContentPos: false,
 	  overflowY: 'hidden',
 	  gallery:{
 	    enabled:true
 	  },
 	  mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+	  callbacks: {
+	    buildControls: function() {
+	      // re-appends controls inside the main container
+	      this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+	    }},
 	  zoom: {
 	    enabled: true, // By default it's false, so don't forget to enable it
 	    duration: 300, // duration of the effect, in milliseconds

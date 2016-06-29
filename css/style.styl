@@ -921,7 +921,6 @@
                     .modal-popup &
                         color #b4b4b4
                     
-
 .graduates-section
     background grayBg
     &-content
@@ -1348,15 +1347,12 @@
     top 0
     z-index 100   
     background rgba(black, 0.7)
-    &-center
-        height 100%
     &:not(.active)
         display none
 
 .modal-popup
-    // flex 0 0 1200px
     width 1200px
-    background popupBgColor
+    flex 1 0 0
     z-index 101          
     &-top
         box-sizing border-box
@@ -1404,6 +1400,7 @@
                 transform translate(-50%, -50%) rotate(-45deg)
     &-content
         padding 20px 20px 30px
+        background popupBgColor
         box-sizing border-box
         overflow-y auto    
         overflow-x hidden
@@ -1413,7 +1410,95 @@
             &:not(.active)
                 display none
                 
+.register-popup
+    position relative
+    flex 0 0 565px
+    box-sizing border-box
+    height 535px
+    background url(../img/reg-popup.png) no-repeat 85px 30px yellowColor2
+    color white
+    padding-bottom 60px
+    &_title
+        font-size 30px
+        font-family fontLight
+        margin-bottom 20px
+    &_desc
+        font-size 14px
+        font-family fontLight
+        flex 0 0 85px
+        line-height 1.3
+    &_button
+        width 125px
+    &_closed
+        cursor pointer
+        position absolute
+        width 54px
+        height 54px
+        right 0
+        top 0
+        &:before,
+        &:after
+            content ''
+            position absolute
+            left 50%
+            top 50%
+            width 18px
+            height 2px
+            background rgba(white, 0.6)
+        &:before
+            transform translate(-50%, -50%) rotate(45deg)
+        &:after
+            transform translate(-50%, -50%) rotate(-45deg)
 
-
-
+.mfp-container
+    button.mfp-arrow
+        width 67px
+        height 67px
+        background rgba(white, 0.12)
+        border-radius (67px / 2)
+        transform translateY(-50%)
+        &.mfp-arrow-left:before
+            border-left 2px solid white
+            transform translate(-50%, -50%) rotate(-45deg)
+            left 53%
+        &.mfp-arrow-right:before
+            border-right 2px solid white    
+            transform translate(-50%, -50%) rotate(45deg)
+            left 47%
+        &:before
+            content ''
+            position absolute
+            top 50%
+            box-sizing border-box
+            width 13px
+            height 13px
+            border-top 2px solid white
+    button.mfp-close
+        font-size 0
+        border none
+        background none     
+        position absolute
+        right 0
+        top 15px
+        width 18px
+        height 18px
+        &:hover:before,
+        &:hover:after
+            background white
+        &:before,
+        &:after
+            content ''
+            position absolute
+            left 50%
+            top 50%
+            width 100%
+            height 2px
+            background rgba(white, 0.6)
+            transition background 250ms
+        &:before
+            transform translate(-50%, -50%) rotate(45deg)
+        &:after
+            transform translate(-50%, -50%) rotate(-45deg)
+            
+            
 
