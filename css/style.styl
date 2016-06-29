@@ -19,6 +19,9 @@
     top 0
     left 0
     z-index 100
+    @media mediumView
+        .content-center
+            margin 0
     
 .header-content
     height 100%
@@ -30,6 +33,15 @@
 
 .top-menu
     margin-right 45px
+    @media mediumView
+        position absolute
+        margin 0
+        width 100%
+        display block
+        left 0
+        top 92px
+        background #292929
+        display none
     &_button
         cursor pointer
         user-select none
@@ -38,8 +50,19 @@
         margin-left 50px
         color grayColor
         letter-spacing 2px
-        &:hover
-            color blueColor
+        @media mediumView
+            margin 0
+            display flex
+            align-items center
+            justify-content center
+            box-sizing border-box
+            height 50px
+            color #bbb
+            &:not(:last-child)
+                border-bottom 1px solid #363535
+        @media largeView
+            &:hover
+                color blueColor
 
 .layout-content
     margin-bottom 35px
@@ -56,7 +79,8 @@
         top 0
         left 0
         object-fit cover
-        display none
+        @media largeView
+            display none
     &_video
         position absolute
         width 100%
@@ -64,6 +88,8 @@
         left 0
         top 0
         overflow hidden
+        @media mediumView
+            display none
         video
             position absolute
             left 0
@@ -1317,6 +1343,7 @@
                     cursor pointer
                     user-select none
                     color #7c7c7c
+                    white-space nowrap
         &-subs
             &_title
                 color #9a9898

@@ -33,6 +33,24 @@ $(function(){
 
 	});
 
+	// place gallery lightbox
+
+    $('.place-content_gallery a').magnificPopup({
+	  type: 'image',
+	  fixedContentPos: false,
+	  overflowY: 'hidden',
+	  gallery:{
+	    enabled:true
+	  },
+	  mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+	  callbacks: {
+	    buildControls: function() {
+	      // re-appends controls inside the main container
+	      this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+	    }}
+
+	});
+
 	// about parallax
 
 	$('.about-content_box > img').addClass("hidden").viewportChecker({
@@ -161,13 +179,13 @@ $(function(){
         return false;  
     });
 
-    // $('.js-top-button-4').bind('click', function (e) {
-    //    var scroll = $(".graduates-section").offset().top - 92;
-    //    $('body,html').animate({
-    //         scrollTop: scroll
-    //     }, 500);
-    //     return false;  
-    // });
+    $('.js-top-button-4').bind('click', function (e) {
+       var scroll = $(".layout-footer").offset().top;
+       $('body,html').animate({
+            scrollTop: scroll
+        }, 500);
+        return false;  
+    });
 
     $('.js-register-button').bind('click', function (e) {
        var scroll = $(".register-section").offset().top - 92;
@@ -203,14 +221,6 @@ $(function(){
 
     $('.js-info-button-4').bind('click', function (e) {
        var scroll = $(".price-section").offset().top - 92;
-       $('body,html').animate({
-            scrollTop: scroll
-        }, 500);
-        return false;  
-    });
-
-    $('.js-gallery-button').bind('click', function (e) {
-       var scroll = $(".gallery-section").offset().top - 92;
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
