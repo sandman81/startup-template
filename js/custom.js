@@ -81,13 +81,11 @@ $(function(){
 
 	$('.js-programm-date').addClass("hidden").viewportChecker({
         classToAdd: 'visible animated fadeInDown', 
-        repeat: true,
 		offset: 100 
     });
 
     $('.programm-content-tour-date_title_mark').viewportChecker({
         classToAdd: 'pulse', 
-        repeat: true,
 		offset: 100 
     });
 
@@ -227,32 +225,55 @@ $(function(){
         return false;  
     });
 
+    $('.js-about-scroll-button').bind('click', function (e) {
+       var scroll = $(".about-content").offset().top - 92;
+       $('body,html').animate({
+            scrollTop: scroll
+        }, 500);
+        return false;  
+    });
+
+
 
     // modals open
 
+    $('.modal-popup-content, .modal-popup-top').click(function(event) {
+       event.stopPropagation();
+    });
+
     $('.js-all-speakers-button').click(function(event) {
     	$('.js-modal-speakers').addClass('active');
+        $('body').addClass('no-scroll');
+        return false;
     });
 
     $('.js-all-mentors-button').click(function(event) {
     	$('.js-modal-mentors').addClass('active');
+        $('body').addClass('no-scroll');
+        return false;
     });
 
     $('.js-all-reviews-button').click(function(event) {
     	$('.js-modal-reviews').addClass('active');
+        $('body').addClass('no-scroll');
+        return false;
     });
 
     $('.js-all-graduates-button').click(function(event) {
     	$('.js-modal-graduates').addClass('active');
+        $('body').addClass('no-scroll');
+        return false;
     });
-
-
-
 
     $('.modal-popup-top_closed-button').click(function(event) {
     	$(this).closest('.modal-content').removeClass('active');
+        $('body').removeClass('no-scroll');
     });
 
+    $('.modal-content').click(function(event) {
+        $(this).removeClass('active');
+        $('body').removeClass('no-scroll');
+    });
 
 
 

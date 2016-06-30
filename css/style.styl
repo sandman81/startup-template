@@ -26,10 +26,42 @@
 .header-content
     height 100%
     padding 0 30px
+    @media mediumView
+        padding-right 0
     &-buttons
         flex 1 0 0
+        height 100%
         &_reg
             flex 0 0 130px
+        &_call
+            cursor pointer
+            margin-left 60px
+            @media largeView
+                display none
+        &_burger
+            flex 0 0 55px
+            height 100%
+            cursor pointer
+            margin-left 40px
+            span
+                flex 0 0 18px
+                height 1px
+                background yellowColor
+                position relative
+                &:before,
+                &:after
+                    content ''
+                    position absolute
+                    left 0
+                    width 100%
+                    height 1px
+                    background yellowColor
+                &:before
+                    top -6px
+                &:after
+                    bottom -6px
+            @media largeView
+                display none
 
 .top-menu
     margin-right 45px
@@ -72,6 +104,8 @@
     height 100vh
     box-sizing border-box
     padding-top 92px
+    @media mediumView
+        height 720px
     &_img
         position absolute
         width 100%
@@ -79,8 +113,10 @@
         top 0
         left 0
         object-fit cover
-        @media largeView
-            display none
+        display none
+        &.medium-view
+            @media mediumView
+                display block
     &_video
         position absolute
         width 100%
@@ -109,6 +145,10 @@
         height 100%
         position relative
         border-right 1px solid rgba(white, 0.2)
+        @media mediumView
+            flex-direction column
+            box-sizing border-box
+            padding-top 40px
         &:before
             content ''
             position absolute
@@ -117,6 +157,9 @@
             height 50%
             width 645px
             background rgba(yellowColor, 0.55)
+            @media mediumView
+                left 50%
+                transform translate(-50%)
         &:after
             content ''
             position absolute
@@ -134,6 +177,13 @@
             padding 0 45px
             box-sizing border-box
             margin-right 147px
+            @media mediumView
+                order 2
+                flex 0 0 397px
+                width 645px
+                margin 0
+                justify-content flex-start
+                padding-top 35px
             &_desc
                 font-size 14px
                 text-transform uppercase
@@ -213,6 +263,11 @@
             z-index 2
             box-sizing border-box
             padding-left 8px
+            @media mediumView
+                order 1
+                width 54px
+                flex 0 0 54px
+                margin-bottom 40px
             &:before
                 content ''
                 width 0
@@ -220,6 +275,8 @@
                 border-style solid
                 border-width 21.5px 0 21.5px 27px
                 border-color transparent transparent transparent white
+                @media mediumView
+                    border-width 10px 0 10px 12px
         .round-figure
             top 270px
             right 411px
