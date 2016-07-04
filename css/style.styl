@@ -483,20 +483,40 @@
         z-index 70
         border-left 1px solid rgba(black, 0.1)
         border-right 1px solid rgba(white, 0.3) 
+        @media mediumView
+            border none
     &-info
         flex 0 0 50%
+        max-width 50%
         padding-top 60px
+        @media mediumView
+            padding 35px 20px 0
+            box-sizing border-box
+        @media smallView
+            flex 1 0 0
+            max-width initial
+            padding 30px 0 0
         &_year
             text-transform uppercase
             font-size 18px
             color grayColor2
             letter-spacing 3px
             margin-bottom 20px
+            @media mediumView
+                font-size 14px
+                margin-bottom 15px
+            @media smallView
+                font-size 18px
         &_date
             font-size 60px
             font-family fontBold
             color grayColor3
             margin-bottom 25px
+            @media mediumView
+                font-size 36px
+                margin-bottom 30px
+            @media smallView
+                margin-bottom 20px
         &_desc
             font-size 18px
             text-align center
@@ -505,22 +525,45 @@
             line-height 1.3
             margin-bottom 50px
             color grayColor4
+            @media mediumView
+                width auto
+                font-size 14px
+                margin-bottom 25px
         &-buttons
+            @media mediumView
+                flex-direction column
             &_but
                 cursor pointer
                 user-select none
                 color grayColor5
                 line-height 1.7
                 margin 0 (54px / 2)
-                &:hover
-                    color redColor
-                    border-bottom 1px solid redColor
+                @media mediumView
+                    margin 0
+                    display flex
+                    align-items center
+                    flex 0 0 40px
+                    &:after
+                        content ''
+                        box-sizing border-box
+                        flex 0 0 10px
+                        height 10px
+                        border-top 1px solid grayColor8
+                        border-right 1px solid grayColor8
+                        margin-left 8px
+                        transform rotate(45deg)
+                @media largeView
+                    &:hover
+                        color redColor
+                        border-bottom 1px solid redColor
     &-slider
         position absolute
         right 0
         top 0
         width 50%
         height 100%
+        @media smallView
+            display none
         .bx-wrapper
             position relative
             .bx-controls
@@ -557,15 +600,31 @@
                 object-fit cover
 
 .info-content
+    .block-title
+        @media mediumView
+            margin-bottom 35px
     &-box
         padding 80px 0
         border-left 1px solid #f5f5f5
         border-right 1px solid #f5f5f5
+        @media mediumView
+            border none
     &-list
+        @media mediumView
+            flex-direction column
+            align-items center
         &-item
             flex 0 0 290px
             text-align center
             margin 0 48px
+            @media mediumView
+                flex 0 0 auto
+                margin 0
+                width 430px
+                &:not(:last-child)
+                    margin-bottom 60px
+            @media smallView
+                width auto
             &_icon
                 margin-bottom 40px
                 flex 0 0 140px    
@@ -577,14 +636,23 @@
                 line-height 1.3
                 letter-spacing 1px
                 margin-bottom 20px
+            &_desc
+                font-family fontLight
+                color #94979b
+                line-height 1.2
                 
 .users-content
     background yellowColor2
+    .content-center
+        @media smallView
+            margin 0
     &.mentors
         background yellowColor3
     &-box
         padding 55px 0
         position relative
+        @media smallView
+            padding 40px 0 45px
         &:before,
         &:after
             content ''
@@ -593,6 +661,8 @@
             width 1px
             height 220px
             background rgba(white, 0.2)
+            @media mediumView
+                display none
         &:before
             left 0
         &:after
@@ -600,15 +670,21 @@
         .round-figure
             left 95px
             top 120px
+            @media smallView
+                display none
             &.round-2
                 top 30px
                 left 790px
         .bottom-triangle-figure-2
             left 290px
             top 195px
+            @media mediumView
+                display none
         .square-figure
             top 80px
             right 95px
+            @media smallView
+                display none
             &.square-rotate
                 top 50px
                 right 745px
@@ -619,15 +695,22 @@
     &-top
         margin-bottom 60px
         color white
+        @media smallView
+            margin-bottom 50px
         .block-title
             color white
             margin-bottom 10px
             letter-spacing 1px
+            @media smallView
+                font-size 36px
         &_desc
             text-align center
             width 330px
             line-height 1.3
             margin-bottom 25px
+            @media smallView
+                width auto
+                margin 0 20px 20px
         &_button
             user-select none
             cursor pointer
@@ -645,6 +728,8 @@
             margin 0 -35px -30px 0
         &-item
             width 169px
+            @media mediumView
+                margin 0 auto
             .modal-popup &
                 margin 0 27px 30px 0
             &-info
@@ -716,22 +801,56 @@
 .users-info
     height 626px
     background url(../img/users-info.jpg) no-repeat center
-    background-size cover         
+    background-size cover
+    position relative
+    @media mediumView
+        &:after
+            content ''
+            position absolute
+            width 100%
+            height 1px
+            left 0
+            top 312px
+            background rgba(#f5f5f5, 0.1) 
+    @media smallView
+        height auto
+        background #292929
+        padding 30px 0 70px
+        &:after
+            display none
     &-content
         height 100%
         border-left 1px solid rgba(#f5f5f5, 0.1)
         border-right 1px solid rgba(#f5f5f5, 0.1)     
+        @media mediumView
+            border none
     &_title
         color white
         text-align center
         font-weight normal
         font-size 48px
         margin-bottom 30px
+        @media smallView
+            font-size 30px
+            margin-bottom 45px
     &-list  
+        @media smallView
+            display block
         &-column
             flex 0 0 375px
             margin 0 100px
+            @media mediumView
+                margin 0
+                flex 0 0 325px
+                &:first-child
+                    margin-right 30px
+            @media smallView
+                &:first-child
+                    margin 0 0 50px
             &-item
+                @media smallView
+                    flex-direction column
+                    align-items center
                 &:not(:last-child)
                     margin-bottom 55px
                 &_icon
@@ -740,11 +859,22 @@
                     background rgba(#f0f0f0, 0.1)
                     border-radius 40px
                     margin-right 25px
+                    @media smallView
+                        margin 0 0 20px
+                        width 80px
                 &_text
                     font-size 20px
                     color grayColor8
                     font-weight 300
                     line-height 1.2
+                    b
+                        font-family fontBold
+                    @media mediumView
+                        font-size 16px
+                        font-family fontLight
+                    @media smallView
+                        text-align center
+                        font-size 20px
 
 .programm-content
     background blueColor2
@@ -755,6 +885,11 @@
         border-left 1px solid rgba(white, 0.2)
         border-right 1px solid rgba(white, 0.2)
         padding-bottom 10px
+        @media mediumView
+            border none
+            padding 0
+        @media smallView
+            display block
         &:before,
         &:after
             content ''
@@ -763,11 +898,17 @@
             height 1px
             width 100%
             background rgba(white, 0.1)
+            @media smallView
+                display none
         &:before
             top 235px
+            @media mediumView
+                top 310px
         &:after
             bottom 505px
         .square-figure
+            @media smallView
+                display none
             &.pos-1
                 left 290px
                 top 110px
@@ -778,6 +919,8 @@
                 left 50px
                 bottom 175px
         .round-figure
+            @media smallView
+                display none
             &.pos-1
                 top 270px
                 right 95px
@@ -800,6 +943,8 @@
                 right 50px
                 bottom 120px
         .bottom-triangle-figure
+            @media smallView
+                display none
             &.pos-1
                 left 95px
                 top 365px
@@ -809,6 +954,8 @@
                 bottom 385px
                 right 140px
         .left-triangle-figure-2
+            @media smallView
+                display none
             &.pos-1
                 top 505px
                 right 245px
@@ -822,14 +969,53 @@
         border-left 1px solid grayFigure
         padding 60px 0 80px 65px
         height 95%
+        box-sizing border-box
+        @media mediumView
+            flex 0 0 515px
+        @media smallView
+            border none
+            padding 40px 0 130px
+            display flex
+            flex-direction column
+            align-items center
+            text-align center
         &_title
             font-weight normal
             font-size 48px
             font-family fontLight
             margin-bottom 80px
+            @media smallView
+                font-size 36px
+                margin-bottom 40px
         &-date
+            @media smallView
+                padding-top 100px
+                &:first-of-type
+                    .programm-content-tour-date_title_mark:after
+                        content ''
+                        position absolute
+                        width 1px
+                        height 70px
+                        bottom 15px
+                        left 50%
+                        transform translateX(-50%)
+                        background linear-gradient(top, blueColor2 0%, white 100%)
+                &:last-of-type
+                    .programm-content-tour-date_title:after
+                        content ''
+                        position absolute
+                        width 1px
+                        height 50px
+                        top 55px
+                        left 50%
+                        transform translateX(-50%)
+                        background linear-gradient(top, white 0%, blueColor2 100%)
             &:not(:last-child)
                 margin-bottom 80px
+                @media mediumView
+                    margin-bottom 70px
+                @media smallView
+                    margin-bottom 30px
             &_day
                 font-size 10px
                 text-transform uppercase
@@ -841,6 +1027,8 @@
                 font-size 24px
                 font-family fontBold
                 margin-bottom 20px
+                @media smallView
+                    margin-bottom 15px
                 &_mark
                     position absolute
                     left -73px
@@ -853,21 +1041,45 @@
                     border 4px solid blueColor2
                     border-radius 10px
                     box-shadow 0 0 0 1px rgba(white, 0.5)
+                    @media smallView
+                        top -50px
+                        left 50%
+                        margin-top 0
+                        transform translateX(-50%)
+                        &:before
+                            content ''
+                            position absolute
+                            bottom 12px
+                            left 50%
+                            transform translateX(-50%)
+                            width 1px
+                            height 73px
+                            background white
                     &.pulse
                         animation markerPulse 2s
+                        @media smallView
+                            animation none
+                    
             &_desc
                 font-size 18px
                 line-height 1.4
+                @media smallView
+                    opacity 0.7
         
 .programm-download
     height 160px
     background blueColor3
     color white
+    @media smallView
+        display none
     &-content
         height 100%
         border-left 1px solid rgba(white, 0.2)
         border-right 1px solid rgba(white, 0.2)
         padding 0 95px
+        @media mediumView
+            border none
+            padding 0 45px
         &-text
             &_title
                 font-size 36px
@@ -891,28 +1103,45 @@
     background url(../img/place.jpg) no-repeat center
     background-size cover
     position relative
+    @media smallView
+        height 741px
+        background url(../img/place-small.jpg) no-repeat center
+        background-size cover
     &-box
         box-sizing border-box
         height 100%
         padding-top 80px
+        @media smallView
+            padding-top 40px
         .square-figure
             left 155px
             top 140px
             background grayFigure
+            @media smallView
+                display none
         .round-figure
             background grayFigure
             right 155px
             top 80px
+            @media smallView
+                display none
         .bottom-triangle-figure
             right 300px
             top 230px
             border-color grayFigure transparent transparent transparent
+            @media smallView
+                display none
         .right-triangle-figure
             left 350px
             top 245px
             border-color transparent transparent transparent grayFigure
+            @media smallView
+                display none
         .block-title
             margin-bottom 20px
+            @media smallView
+                font-size 36px
+                margin-bottom 10px
     &_desc
         text-align center
         width 670px
@@ -921,15 +1150,29 @@
         color rgba(#505050, 0.7)
         line-height 1.3
         margin-bottom 35px
+        position relative
+        z-index 2
+        @media mediumView
+            width auto
+            font-size 16px
+            margin-bottom 20px
     .yellow-button
         width 193px
+        position relative
+        z-index 2
 
 .price-section
     &-content
         position relative
         padding-top 75px
+        @media mediumView
+            padding 80px 0
+        @media smallView
+            padding 40px 0 65px
         .round-figure
             background rgba(grayTitle2, 0.3)
+            @media mediumView
+                display none
             &.pos-1
                 left 100px
                 top 110px
@@ -942,6 +1185,8 @@
         .square-figure.square-rotate
             transform rotate(45deg)
             background rgba(grayTitle2, 0.3)
+            @media mediumView
+                display none
             &.pos-1
                 left 395px
                 top 45px
@@ -952,21 +1197,34 @@
             border-color rgba(grayTitle2, 0.3) transparent transparent transparent
             left 70px
             top 430px
+            @media mediumView
+                display none
         .right-triangle-figure
             right 230px
             top 470px
             border-color transparent transparent transparent rgba(grayTitle2, 0.3)
+            @media mediumView
+                display none
         .square-figure
             right 100px
             top 75px
             background rgba(grayTitle2, 0.3)
+            @media mediumView
+                display none
         .block-title
             margin-bottom 45px
             color #353535
+            @media smallView
+                font-size 36px
+                margin-bottom 30px
     &-list
         box-sizing border-box
         height 530px
         border 1px solid yellowColor2
+        @media mediumView
+            height 425px
+        @media smallView
+            height 810px
         &_title
             background white
             font-size 18px
@@ -981,12 +1239,31 @@
                 height 5px
                 background yellowColor2
                 border-radius (5px / 2)
+            @media smallView
+                margin-bottom 40px
+                width 220px
         &-content
             width 715px
             flex 0 0 185px
             font-family fontAvenirReg
+            @media mediumView
+                width 560px
+            @media smallView
+                flex-direction column
+                align-items center
+                width auto
+                flex 0 0 auto
+                margin 0 20px
             &-item
                 flex 0 0 250px
+                @media smallView
+                    flex 0 0 auto
+                    display block
+                    text-align center
+                    &:not(:last-child)
+                        margin-bottom 75px
+                    > div
+                        align-items center
                 &:before
                     content ''
                     flex 0 0 11px
@@ -994,6 +1271,8 @@
                     border-radius (11px / 2)
                     background yellowColor2
                     margin-right 8px
+                    @media smallView
+                        display none
                 &_title
                     font-size 16px
                     color grayTitle3
@@ -1002,14 +1281,37 @@
                     margin-top 10px
                     color grayColor9
                     line-height 1.3
+                    @media mediumView
+                        font-size 14px
     &-counts
         background white
         height 382px
         margin -173px auto 0
         width 1020px
+        @media mediumView
+            width 695px
+            height 173px
+            margin -85px auto 0
+        @media smallView
+            flex-direction column
+            align-items center
+            justify-content center
+            box-sizing border-box
+            width 90%
+            height 561px
+            border 1px solid yellowColor2
+            margin -279px auto 0
+            border-radius 3px
+            padding 0 10px
         &-item
             flex 0 0 325px
             position relative
+            @media mediumView
+                flex 0 0 225px
+            @media smallView
+                flex 0 0 173px
+                width 100%
+                margin 4px 0
             &-content
                 position absolute
                 width 100%
@@ -1019,17 +1321,24 @@
                 background grayBg
                 border-radius top 4px
                 transition all 250ms
-                .price-section-counts-item:hover &
-                    height 412px
-                    background blueColor2
+                @media largeView
+                    .price-section-counts-item:hover &
+                        height 412px
+                        background blueColor2
             &-top
                 height 173px
                 border-bottom 1px solid grayBorder    
                 box-sizing border-box
                 padding-top 23px
                 margin-bottom 35px
-                .price-section-counts-item:hover &
-                    border-bottom-color rgba(white, 0.2)
+                @media largeView
+                    .price-section-counts-item:hover &
+                        border-bottom-color rgba(white, 0.2)
+                @media mediumView
+                    height 85px
+                    padding-top 10px
+                    margin-bottom 20px
+                    border-bottom 1px solid #d3d3d3
                 &_stars
                     margin-bottom 10px
                     i
@@ -1041,18 +1350,26 @@
                     color grayTitle4 
                     margin-bottom 30px
                     transition color 250ms
-                    .price-section-counts-item:hover &
-                        color white
+                    @media largeView
+                        .price-section-counts-item:hover &
+                            color white
+                    @media mediumView
+                        display none
                 &_price
                     font-size 40px
                     text-transform uppercase
                     font-family fontLight
                     color blueColor2 
                     transition color 250ms
-                    .price-section-counts-item:hover &
-                        color white
+                    @media largeView
+                        .price-section-counts-item:hover &
+                            color white
+                    @media mediumView
+                        font-size 30px
                     span
                         font-size 24px 
+                        @media mediumView
+                            font-size 18px
             &-bottom
                 &_desc
                     width 240px
@@ -1062,16 +1379,24 @@
                     color grayColor10
                     line-height 1.3
                     transition color 250ms
-                    .price-section-counts-item:hover &
-                        color white
+                    @media largeView
+                        .price-section-counts-item:hover &
+                            color white
+                    @media mediumView
+                        width 210px
+                        flex 0 0 auto
+                        font-size 14px
                     span
                         font-family fontAvenirDemi
                         color blueColor2
                         transition color 250ms
-                        .price-section-counts-item:hover &
-                            color white
+                        @media largeView
+                            .price-section-counts-item:hover &
+                                color white
                 &_button
                     width 138px
+                    @media mediumView
+                        display none !important
                     .price-section-counts-item:hover &
                         @extend .yellow-button
                                
@@ -1080,26 +1405,50 @@
     color white
     &-content
         padding 75px 0 60px
+        @media smallView
+            padding 40px 0 60px
         .block-title
             color white
             margin-bottom 15px
+            @media smallView
+                font-size 36px
+                margin-bottom 10px
     &_desc
         font-size 18px
         font-family fontLight
         opacity 0.7
         line-height 1.3
         margin-bottom 25px
+        @media smallView
+            font-size 16px
     &_all-button
         box-sizing border-box
         border 1px solid white
         width 130px
         margin-bottom 40px
     &-list
+        @media mediumView
+            justify-content center
         .modal-popup &
             margin 0 20px 0 0
         &-item
             flex 0 0 368px
             margin-right 28px
+            @media mediumView
+                margin 0
+                flex 0 0 335px
+                &:last-child
+                    display none
+                &:first-child
+                    margin-right 30px
+                    & + div
+                        margin-left 30px
+            @media smallView
+                &:first-child
+                    margin 0
+                    flex 0 0 280px
+                    & + div
+                        display none
             .modal-popup &
                 margin 0 0 90px
                 flex 0 0 540px
@@ -1110,18 +1459,29 @@
                 border-radius (71px / 2)
                 margin-right 28px
                 box-sizing border-box
+                @media smallView
+                    flex 0 0 46px
+                    height 46px
+                    margin-right 11px
                 img
                     width 65px
                     height 65px
                     border-radius (65px / 2)
+                    @media smallView
+                        width 40px
+                        height 40px
             &-info
                 padding-top 10px
+                @media smallView
+                    padding 0
                 &-top
                     box-sizing border-box
                     height 50px
                     border-bottom 1px solid rgba(white, 0.2)
                     margin-bottom 22px
                     padding-right 11px
+                    @media smallView
+                        padding 0
                     .modal-popup &
                         border-bottom-color #d4d4d4
                     &-text
@@ -1160,10 +1520,18 @@
                     
 .graduates-section
     background grayBg
+    .content-center
+        @media smallView
+            margin 0
     &-content
         padding 80px 0 65px
+        @media smallView
+            padding 40px 0 50px
         .block-title
             margin-bottom 15px
+            @media smallView
+                font-size 36px
+                margin-bottom 10px
     &_desc
         font-size 18px
         line-height 1.3
@@ -1171,6 +1539,9 @@
         color grayColor11
         opacity 0.7
         margin-bottom 25px
+        @media smallView
+            font-size 16px
+            margin 0 20px 25px
     &_all-button
         box-sizing border-box
         width 154px
@@ -1186,6 +1557,8 @@
         &-item
             width 215px
             margin 0 auto
+            @media mediumView
+                width 190px
             &_logo
                 flex 0 0 105px
                 width 100%
@@ -1198,6 +1571,9 @@
                 font-size 24px
                 color grayTitle5
                 margin-bottom 25px
+                @media mediumView
+                    font-size 22px
+                    margin-bottom 15px
             &_desc
                 flex 0 0 140px
                 font-size 14px  
@@ -1230,6 +1606,10 @@
                     border-top 2px solid yellowColor2
                     border-left 2px solid yellowColor2
                     transform rotate(-45deg)
+                    @media screen and (max-width: 1220px)
+                        left 0
+                    @media smallView
+                        left 20px
                     &.disabled
                         border-top 2px solid #d5d5d5
                         border-left 2px solid #d5d5d5
@@ -1238,6 +1618,10 @@
                     border-top 2px solid yellowColor2
                     border-right 2px solid yellowColor2
                     transform rotate(45deg)
+                    @media screen and (max-width: 1220px)
+                        right 0
+                    @media smallView
+                        right 20px
                     &.disabled
                         border-top 2px solid #d5d5d5
                         border-right 2px solid #d5d5d5
@@ -1250,8 +1634,14 @@
         overflow hidden
         border-left 1px solid rgba(white, 0.1)
         border-right 1px solid rgba(white, 0.1)
+        @media mediumView
+            border none
+        @media smallView
+            padding 40px 0 50px
         .right-triangle-figure
             border-color transparent transparent transparent #dc5430
+            @media mediumView
+                display none
             &.pos-1
                 left 0
                 top 384px
@@ -1260,6 +1650,8 @@
                 top 125px
         .round-figure
             background #dc5430
+            @media mediumView
+                display none
             &.pos-1
                 left 98px
                 top 145px
@@ -1270,9 +1662,13 @@
             border-color #dc5430 transparent transparent transparent
             left 190px
             top 13px
+            @media mediumView
+                display none
         .square-figure.square-rotate
             transform rotate(45deg)
             background #dc5430
+            @media mediumView
+                display none
             &.pos-1
                 left 320px
                 top 145px
@@ -1283,19 +1679,33 @@
             background #dc5430
             right 0
             top 65px
+            @media mediumView
+                display none
         .block-title
             color white
             margin-bottom 15px 
+            @media smallView
+                font-size 36px
+                margin-bottom 10px
     &_desc
         font-size 18px
         opacity 0.7
         font-family fontLight
         line-height 1.3
         margin-bottom 55px
+        @media smallView
+            font-size 16px
+            margin-bottom 35px
     &-form
         position relative
         width 1090px
         height 323px
+        @media mediumView
+            width 600px
+            height 414px
+        @media smallView
+            width 100%
+            height 363px   
         &:before,
         &:after
             content ''
@@ -1321,13 +1731,30 @@
             padding 110px 60px 0
             border-radius top 3px
             z-index 2
+            @media mediumView
+                padding 55px 0 0
+            @media smallView
+                border-radius bottom 3px
+                padding 45px 18px
         &-fields
             margin-bottom 80px
+            @media mediumView
+                flex-direction column
+                align-items center
+            @media smallView
+                margin-bottom 50px
             &_field
                 flex 0 0 265px
                 box-sizing border-box
                 padding-left 6px
                 border-bottom 1px solid #e0e0e0
+                @media mediumView
+                    flex 0 0 auto
+                    width 265px
+                    &:not(:last-child)
+                        margin-bottom 45px
+                @media smallView
+                    width 100%
                 label
                     margin-right 10px
                 .form-text
@@ -1341,11 +1768,15 @@
     background blueColor2
     margin-bottom 80px
     color white
+    @media smallView
+        display none
     &-content
         position relative
         padding 80px 0 100px
         border-left 1px solid rgba(white, 0.3)
         border-right 1px solid rgba(white, 0.3)
+        @media mediumView
+            border none
         .right-triangle-figure
             border-color transparent transparent transparent rgba(white, 0.3)
             &.pos-1
@@ -1397,6 +1828,8 @@
         font-family fontLight
         line-height 1.3
         margin-bottom 55px
+        @media mediumView
+            margin-bottom 80px
     &-counts-top
         margin-bottom 80px
         &-item
@@ -1408,6 +1841,11 @@
             background #407ce3
             border-radius (245px / 2)
             padding-top 65px
+            @media mediumView
+                flex 0 0 190px
+                height 190px
+                padding-top 50px
+                margin 0 (54px / 2)
             div
                 position relative
             &:first-child:before
@@ -1426,17 +1864,27 @@
                 height 280px
                 background rgba(#407ce3, 0.45)
                 border-radius (280px / 2)
+                @media mediumView
+                    width 215px
+                    height 215px
             &_count
                 font-size 72px
                 font-family fontLight
                 margin-bottom 10px
+                @media mediumView
+                    font-size 60px
+                    margin-bottom 5px
             &_desc
                 font-size 18px
                 opacity 0.7
                 line-height 1.2
+                @media mediumView
+                    font-size 14px
     &-counts-middle
         margin-bottom 100px
         width 100%
+        @media mediumView
+            margin-bottom 50px
         &-item
             flex 0 0 310px
             height 310px
@@ -1467,21 +1915,36 @@
                 &_desc
                     opacity 0.7
     &-counts-bottom
+        justify-content space-between
+        width 100%
         &-item
             margin 0 50px
+            @media mediumView
+                margin 0
+                flex 0 0 210px
             &_count
                 font-size 48px
                 font-family fontLight
                 margin-right 20px
                 line-height 0.8
+                @media mediumView
+                    font-size 40px
             &_desc
                 line-height 1.2
                 opacity 0.7
+                @media mediumView
+                    font-size 14px
+                    font-family fontAvenirReg
         
 .partners-section
     margin-bottom 100px
+    @media smallView
+        margin 40px 0
     .block-title
         margin-bottom 15px
+        @media smallView
+            font-size 36px
+            margin-bottom 10px
     &_desc
         line-height 1.3
         font-size 18px
@@ -1489,19 +1952,37 @@
         margin-bottom 60px
         color grayColor11
         opacity 0.7
+        @media smallView
+            font-size 16px
+            margin-bottom 30px
     &-list
         margin-bottom -100px
+        @media smallView
+            margin-bottom 0
         &_item
             flex 0 0 215px
             height 110px
             margin 0 35px 100px
+            @media mediumView
+                flex 0 0 170px
+                height 90px
+            @media smallView
+                flex 0 0 130px
+                margin 0 5px 50px
             img
                 width auto
                 height auto
                 max-width 215px
                 max-height 110px
+                @media mediumView
+                    max-width 170px
+                    max-height 90px
+                @media smallView
+                    max-width 120px
 
 .gallery-section
+    @media mediumView
+        display none
     &-content
         margin-bottom -22px
         a
@@ -1510,6 +1991,10 @@
                 margin-top -127px
             img
                 display block
+
+.gallery-section-slider
+    @media largeView 
+        display none
 
 .layout-footer 
     flex 0 0 269px

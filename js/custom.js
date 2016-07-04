@@ -1,5 +1,17 @@
 $(function(){
 
+    // response content
+
+    $('.gallery-section').each(function(index, el) {
+        var images = $(this).find('img').clone();
+        $('.gallery-section-slider').append(images);
+    });
+
+    $('.gallery-section-slider').each(function(index, el) {
+        $(this).find('img').wrap('<div class="gallery-section-slider_img"></div>');
+    });
+
+
 	// gallery lightbox
 
     $('.gallery-section-content').magnificPopup({
@@ -72,9 +84,37 @@ $(function(){
 	// users slider
 
 	$('.js-users-list').owlCarousel({
-	    margin: 29,
 	    items: 6,
-	    mouseDrag: false
+	    mouseDrag: false,
+        responsive:{
+            0:{
+                items: 1.5,
+                margin: false
+            },
+            400:{
+                items: 2,
+                margin: false
+            },
+            560:{
+                items: 3,
+                margin: false
+            },
+            768:{
+                items: 4,
+                margin: false
+            },
+            900:{
+                items: 5,
+                margin: false
+            },
+            1080:{
+                items: 6,
+                margin: false
+            },
+            1180:{
+                margin: 29
+            }
+        }
 	});
 
 	// dates animates
@@ -95,8 +135,34 @@ $(function(){
 	    margin: 0,
 	    items: 4,
 	    nav: true,
-	    mouseDrag: false
+	    mouseDrag: false,
+        responsive:{
+            0:{
+                items: 1.5,
+                nav: false,
+                margin: 35
+            },
+            500:{
+                items: 2
+            },
+            768:{
+                items: 3
+            },
+            900:{
+                items: 4
+            }
+        }
 	});
+
+    // gallery slider
+
+    $('.gallery-section-slider').owlCarousel({
+        margin: 20,
+        items: 1,
+        nav: false,
+        mouseDrag: false
+    });
+
 
 
 	// facts counts 
