@@ -7,8 +7,9 @@ $(function(){
         $('.gallery-section-slider').append(images);
     });
 
-    $('.gallery-section-slider').each(function(index, el) {
-        $(this).find('img').wrap('<div class="gallery-section-slider_img"></div>');
+    $('.header-content-buttons_reg').each(function(index, el) {
+        var button = $(this).clone();
+        $('.top-menu').prepend(button);
     });
 
 
@@ -158,9 +159,20 @@ $(function(){
 
     $('.gallery-section-slider').owlCarousel({
         margin: 20,
-        items: 1,
+        items: 1.5,
+        loop: true,
         nav: false,
-        mouseDrag: false
+        center: true,
+        mouseDrag: false,
+        responsive:{
+            0:{
+                margin: 10,
+                items: 1
+            },
+            768:{
+                margin: 20
+            }
+        }
     });
 
 
@@ -220,6 +232,7 @@ $(function(){
     // scroll elements
 
     $('.js-top-button-1').bind('click', function (e) {
+       $('.top-menu').removeClass('active');
        var scroll = $(".about-content").offset().top - 92;
        $('body,html').animate({
             scrollTop: scroll
@@ -228,6 +241,7 @@ $(function(){
     });
 
     $('.js-top-button-2').bind('click', function (e) {
+       $('.top-menu').removeClass('active');
        var scroll = $(".reviews-section").offset().top - 92;
        $('body,html').animate({
             scrollTop: scroll
@@ -236,6 +250,7 @@ $(function(){
     });
 
     $('.js-top-button-3').bind('click', function (e) {
+        $('.top-menu').removeClass('active');
        var scroll = $(".graduates-section").offset().top - 92;
        $('body,html').animate({
             scrollTop: scroll
@@ -244,6 +259,7 @@ $(function(){
     });
 
     $('.js-top-button-4').bind('click', function (e) {
+        $('.top-menu').removeClass('active');
        var scroll = $(".layout-footer").offset().top;
        $('body,html').animate({
             scrollTop: scroll
@@ -299,6 +315,10 @@ $(function(){
         return false;  
     });
 
+    $('.top-menu .js-register-button').click(function(event) {
+        $('.top-menu').removeClass('active');
+    });
+
 
 
     // modals open
@@ -340,6 +360,13 @@ $(function(){
         $(this).removeClass('active');
         $('body').removeClass('no-scroll');
     });
+
+    // open tablet menu
+
+    $('.js-tablet-menu-button').click(function(event) {
+        $('.top-menu').toggleClass('active');
+    });
+
 
 
 

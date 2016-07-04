@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/jquery.circliful.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/jquery.jscrollpane.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery-2.2.0.min.js"></script>
 	<script src="js/jquery.viewportchecker.min.js"></script>
@@ -18,6 +19,7 @@
 	<script src="js/jquery.spincrement.min.js"></script>
 	<script src="js/jquery.circliful.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/jquery.jscrollpane.min.js"></script>
 	<script src="js/custom.js"></script>
 </head>
 <body>
@@ -28,7 +30,7 @@
 					<div class="header-content box-row align-center space-between">
 						<a href="/" class="header-content_logo sprite-icon-logo"></a>
 						<div class="header-content-buttons box-row align-center space-end">
-							<nav class="top-menu box-row">
+							<nav class="top-menu box-row animated fadeIn">
 								<div class="top-menu_button js-top-button-1">о лагере</div>
 								<div class="top-menu_button js-top-button-2">отзывы</div>
 								<div class="top-menu_button js-top-button-3">выпускники</div>
@@ -36,7 +38,7 @@
 							</nav>
 							<div class="header-content-buttons_reg red-button box-row align-center space-center js-register-button">регистрация</div>
 							<div class="header-content-buttons_call sprite-icon-top-tel"></div>
-							<div class="header-content-buttons_burger box-row align-center space-center"><span></span></div>
+							<div class="header-content-buttons_burger box-row align-center space-center js-tablet-menu-button"><span></span></div>
 						</div>
 					</div>
 				</div>
@@ -827,7 +829,55 @@
 						</div>
 					</div>
 				</div>
-				<div class="gallery-section-slider"></div>
+				<div class="gallery-section-slider owl-carousel"></div>
+				<div class="contacts-section">
+					<div class="content-center">
+						<div class="contacts-section-content box-row space-end align-center">
+							<div class="contacts-section-content-info">
+								<div class="contacts-section-content-info_title">Startup Ukraine</div>
+								<div class="contacts-section-content-info-item box-row align-center">
+									<div class="contacts-section-content-info-item_icon box-row align-center space-center">
+										<i class="sprite-icon-map-adr"></i>
+									</div>
+									Киев, ул. Московская 27, 5 этаж
+								</div>
+								<div class="contacts-section-content-info-item box-row align-center">
+									<div class="contacts-section-content-info-item_icon box-row align-center space-center">
+										<i class="sprite-icon-map-tel"></i>
+									</div>
+									+38 (068) 649 83 69 
+								</div>
+								<div class="contacts-section-content-info-item box-row align-center">
+									<div class="contacts-section-content-info-item_icon box-row align-center space-center">
+										<i class="sprite-icon-map-mail"></i>
+									</div>
+									<a href="mailto:office@startupukraine.com">office@startupukraine.com</a>
+								</div>
+							</div>
+							<div class="round-figure"></div>
+							<div class="square-figure"></div>
+							<div class="bottom-triangle-figure-2"></div>
+							<div class="square-figure square-rotate"></div>
+						</div>
+					</div>
+					<div id="map" class="contacts-section-map"></div>
+					<script>
+						var map;
+						function initMap() {
+						  var myLatLng = {lat: 50.4376011, lng: 30.54552};
+						  map = new google.maps.Map(document.getElementById('map'), {
+						    center: {lat: 50.4376011, lng: 30.54552},
+						    zoom: 17
+						  });
+						  var marker = new google.maps.Marker({
+						    position: myLatLng,
+						    map: map,
+						    icon: 'img/map-icon.png'
+						  });
+						}
+    				</script>
+    				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsTVqSAWTZkCpzTlSobolEZrQkGSxeQwY&callback=initMap" async defer></script>
+				</div>
 			</section>
 		</section>
 		<footer class="layout-footer">
