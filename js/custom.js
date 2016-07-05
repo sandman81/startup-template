@@ -12,6 +12,11 @@ $(function(){
         $('.top-menu').prepend(button);
     });
 
+    $('.js-modal-users').each(function(index, el) {
+        var content = $(this).find('.users-content-list-item').clone();
+        $(this).next('.js-modal-users-response').html(content);
+    });
+
 
 	// gallery lightbox
 
@@ -90,7 +95,8 @@ $(function(){
         responsive:{
             0:{
                 items: 1.5,
-                margin: false
+                margin: false,
+                loop: true
             },
             400:{
                 items: 2,
@@ -213,7 +219,12 @@ $(function(){
     // modal tabs
 
 	$('.modal-popup-top-tabs').delegate('.modal-popup-top-tabs_button:not(.active)', 'click', function() {
-      $(this).addClass('active').siblings().removeClass('active').closest('.modal-popup').find('.modal-popup-content-users').eq($(this).index()).fadeIn(200).siblings('.modal-popup-content-users').hide();
+      $(this).addClass('active').siblings().removeClass('active').closest('.modal-popup').find('.modal-popup-content-users').removeClass('active').siblings('.modal-popup-content-users').eq($(this).index()).addClass('active').find('.js-modal-users-response').jScrollPane(
+            {
+            horizontalDragMinWidth: 20,
+            horizontalDragMaxWidth: 20
+            }
+        );
     });
 
     // modal video
@@ -260,7 +271,7 @@ $(function(){
 
     $('.js-top-button-4').bind('click', function (e) {
         $('.top-menu').removeClass('active');
-       var scroll = $(".layout-footer").offset().top;
+       var scroll = $(".contacts-section").offset().top;
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
@@ -330,12 +341,24 @@ $(function(){
     $('.js-all-speakers-button').click(function(event) {
     	$('.js-modal-speakers').addClass('active');
         $('body').addClass('no-scroll');
+        $('.js-modal-speakers .js-modal-users-response').jScrollPane(
+            {
+            horizontalDragMinWidth: 20,
+            horizontalDragMaxWidth: 20
+            }
+        );
         return false;
     });
 
     $('.js-all-mentors-button').click(function(event) {
     	$('.js-modal-mentors').addClass('active');
         $('body').addClass('no-scroll');
+        $('.js-modal-mentors .js-modal-users-response').jScrollPane(
+            {
+            horizontalDragMinWidth: 20,
+            horizontalDragMaxWidth: 20
+            }
+        );
         return false;
     });
 
@@ -367,7 +390,7 @@ $(function(){
         $('.top-menu').toggleClass('active');
     });
 
-
+    
 
 
 

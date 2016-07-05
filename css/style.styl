@@ -222,6 +222,10 @@
             @media mediumView
                 left 50%
                 transform translate(-50%)
+            @media smallView
+                left 0
+                transform none
+                width 100%
         &:after
             content ''
             position absolute
@@ -706,6 +710,8 @@
         .right-triangle-figure
             top 145px
             left 890px
+            @media smallView
+                display none
     &-top
         margin-bottom 60px
         color white
@@ -740,6 +746,9 @@
     &-list
         .modal-popup &
             margin 0 -35px -30px 0
+        &.js-modal-users
+            @media mediumView
+                display none
         &-item
             width 169px
             @media mediumView
@@ -1449,16 +1458,17 @@
             flex 0 0 368px
             margin-right 28px
             @media mediumView
-                margin 0
-                flex 0 0 335px
-                &:last-child
-                    display none
-                &:first-child
-                    margin-right 30px
-                    & + div
-                        margin-left 30px
+                .reviews-section &
+                    margin 0
+                    flex 0 0 335px
+                    &:last-child
+                        display none
+                    &:first-child
+                        margin-right 30px
+                        & + div
+                            margin-left 30px
             @media smallView
-                &:first-child
+                .reviews-section &:first-child
                     margin 0
                     flex 0 0 280px
                     & + div
@@ -2052,6 +2062,10 @@
             background rgba(white, 0.3)
             top 100px
             right 105px
+            &.square-rotate
+                transform rotate(45deg)
+                top 440px
+                right 405px
         .bottom-triangle-figure-2
             border-color rgba(white, 0.3) transparent transparent transparent
             top 70px
@@ -2076,8 +2090,7 @@
                     background rgba(white, 0.3)
                 a
                     text-decoration none
-                    color white
-        
+                    color white        
 
 .layout-footer 
     flex 0 0 269px
@@ -2204,6 +2217,8 @@
                 font-family fontLight
                 color #9a9a9a
                 transition all 250ms
+                @media mediumView
+                    flex 0 0 110px
                 &.active
                     color yellowColor2
                     box-shadow inset 0 -3px 0 yellowColor2
@@ -2238,6 +2253,7 @@
         .js-modal-graduates &
             padding 30px 0
         &-users
+            animation-duration 0.3s
             &:not(.active)
                 display none
                 
@@ -2362,4 +2378,15 @@
         &:after
             transform translate(-50%, -50%) rotate(-45deg)
             
+.js-modal-users-response
+    @media largeView
+        display none
+    .jspContainer
+        height 395px !important
+    .jspPane
+        @extend .box-row
+    .users-content-list-item
+        flex 0 0 169px
+        &:last-child
+            margin-right 0
 
