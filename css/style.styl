@@ -317,6 +317,13 @@
                 height 72px
                 bottom -35px
                 left 43px
+                &.view-large
+                    @media smallView
+                        display none
+                &.view-small
+                    display none
+                    @media smallView
+                        display flex 
                 @media smallView
                     left 50%
                     transform translate(-50%)
@@ -1588,22 +1595,43 @@
     &-list
         .modal-popup &
             margin-bottom 45px
+            @media mediumView
+                margin 0
+                justify-content center
             &:not(:last-child)
                 padding-bottom 45px
                 border-bottom 1px solid #e7e7e7
+                @media mediumView
+                    padding 0
+                    border none
         &-item
             width 215px
             margin 0 auto
             @media mediumView
                 width 190px
+            .modal-popup &
+                @media mediumView
+                    width 280px
+                    margin 0 20px 60px
             &_logo
                 flex 0 0 105px
                 width 100%
                 margin-bottom 35px
+                @media mediumView
+                    flex 0 0 170px
+                    height 90px
+                    @media smallView
+                        flex 0 0 130px
+                        margin 0 5px 50px
                 img
                     width auto !important
                     max-height 105px
                     max-width 215px
+                    @media mediumView
+                        max-width 170px
+                        max-height 90px
+                    @media smallView
+                        max-width 120px
             &_title
                 font-size 24px
                 color grayTitle5
@@ -2111,6 +2139,80 @@
     @media smallView
         flex 0 0 247px
 
+.first-section
+    height 100vh
+    background url(../img/first-bg.jpg) no-repeat center
+    background-size cover
+    position relative
+    &:before,
+    &:after
+        content ''
+        position absolute
+        height 100%
+        width 50%
+        opacity 0.3
+    &:before
+        left 0
+        background yellowColor2
+    &:after
+        right 0
+        background greenColor
+    &-link
+        flex 0 0 580px
+        position relative
+        color white
+        z-index 1
+        text-decoration none
+        padding 175px 0 90px
+        .logo
+            position absolute
+            left 29px
+            top 24px
+        &:first-of-type
+            background yellowColor2
+        &:last-of-type
+            background greenColor
+        &-info
+            .icon
+                margin-bottom 35px
+            &_title
+                text-transform uppercase
+                font-size 14px
+                font-family fontMedium
+                letter-spacing 7px
+                margin-bottom 20px
+                .first-section-link:first-of-type &
+                    color #b17d12
+                .first-section-link:last-of-type &
+                    color #157a36
+            &_desc
+                font-size 30px
+                font-family fontLight
+                letter-spacing 1px
+                line-height 1.2
+        &_date
+            text-transform uppercase
+            font-size 12px
+    .line-1
+        position absolute
+        width 100%
+        height 1px
+        left 0    
+        top 95px
+        z-index 2
+        background rgba(white, 0.2)   
+    .line-2
+        position absolute
+        width 100%
+        height 1px
+        left 0    
+        bottom 71px
+        z-index 2
+        background rgba(white, 0.2)        
+
+
+
+
 .footer-content
     height 100%
     box-sizing border-box
@@ -2405,4 +2507,6 @@
         flex 0 0 169px
         &:last-child
             margin-right 0
+
+
 
