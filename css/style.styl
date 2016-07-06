@@ -115,7 +115,6 @@
             &:hover
                 color blueColor
 
-
 .top-video
     position relative
     height 100vh
@@ -450,7 +449,7 @@
         margin-right 75px
         @media mediumView
             margin-right 40px
-            flex 0 0 auto
+            flex 0 1 auto
             padding-left 400px
         &_title
             font-weight normal
@@ -1451,9 +1450,16 @@
         margin-bottom 40px
     &-list
         @media mediumView
-            justify-content center
+            .reviews-section &
+                justify-content center
         .modal-popup &
             margin 0 20px 0 0
+            @media mediumView
+                margin 0
+            @media smallView
+                justify-content center
+                flex-direction column
+                align-items center
         &-item
             flex 0 0 368px
             margin-right 28px
@@ -1476,6 +1482,12 @@
             .modal-popup &
                 margin 0 0 90px
                 flex 0 0 540px
+                @media mediumView
+                    flex 0 0 45%
+                @media smallView
+                    flex 0 0 auto
+                    width auto
+                    margin-bottom 40px
             &_pic
                 flex 0 0 71px
                 height 71px
@@ -1574,10 +1586,11 @@
         color yellowColor2
         margin-bottom 50px
     &-list
-        .modal-popup &:not(:last-child)
-            padding-bottom 45px
+        .modal-popup &
             margin-bottom 45px
-            border-bottom 1px solid #e7e7e7
+            &:not(:last-child)
+                padding-bottom 45px
+                border-bottom 1px solid #e7e7e7
         &-item
             width 215px
             margin 0 auto
@@ -2188,7 +2201,8 @@
 .modal-popup
     width 1200px
     flex 1 0 0
-    z-index 101         
+    z-index 101
+    overflow-y auto         
     @media mediumView
         width 100%
     &-top
@@ -2203,6 +2217,9 @@
             font-size 18px
             font-family fontLight
             color yellowColor2
+            @media mediumView
+                font-size 16px
+                margin-left 20px
         &-tabs
             height 69px
             @media mediumView
@@ -2247,8 +2264,7 @@
     &-content
         padding 20px 20px 30px
         background popupBgColor
-        box-sizing border-box
-        overflow-y auto    
+        box-sizing border-box  
         overflow-x hidden
         .js-modal-graduates &
             padding 30px 0
