@@ -326,6 +326,15 @@ $(function(){
         return false;  
     });
 
+    $('.js-date-scroll-button').bind('click', function (e) {
+       var scroll = $(".dates-content").offset().top - 56;
+       $('body,html').animate({
+            scrollTop: scroll
+        }, 500);
+        return false;  
+    });
+
+
     $('.top-menu .js-register-button').click(function(event) {
         $('.top-menu').removeClass('active');
     });
