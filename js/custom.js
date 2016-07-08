@@ -192,7 +192,7 @@ $(function(){
 		        duration: 3000
 		    });
 
-		    $(".js-circle-count-1").circliful({
+		    $(".bukovel-page .js-circle-count-1").circliful({
 		        animationStep: 5,
 		        foregroundBorderWidth: 20,
 		        backgroundBorderWidth: 20,
@@ -202,7 +202,7 @@ $(function(){
 		        percent: 65
 		    });
 
-		    $(".js-circle-count-2").circliful({
+		    $(".bukovel-page .js-circle-count-2").circliful({
 		        animationStep: 5,
 		        foregroundBorderWidth: 20,
 		        backgroundBorderWidth: 20,
@@ -211,6 +211,26 @@ $(function(){
 		        fontColor: 'transparent',
 		        percent: 85
 		    });
+
+            $(".verholy-page .js-circle-count-1").circliful({
+                animationStep: 5,
+                foregroundBorderWidth: 20,
+                backgroundBorderWidth: 20,
+                foregroundColor: '#42d070',
+                backgroundColor: '#2f67c6',
+                fontColor: 'transparent',
+                percent: 65
+            });
+
+            $(".verholy-page .js-circle-count-2").circliful({
+                animationStep: 5,
+                foregroundBorderWidth: 20,
+                backgroundBorderWidth: 20,
+                foregroundColor: '#42d070',
+                backgroundColor: '#2f67c6',
+                fontColor: 'transparent',
+                percent: 85
+            });
 
         }
     });
