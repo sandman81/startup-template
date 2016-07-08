@@ -2086,23 +2086,41 @@
     background blueColor2
     color white
     position relative
+    @media smallView
+        height auto
+        .content-center
+            margin 0
     &-map
         position absolute
         left 0
         top 0
         width 52%
         height 100%
+        @media smallView
+            position relative
+            width 100%
+            height 300px
     &-content
         height 100%
         border-right 1px solid rgba(white, 0.3)
+        @media mediumView
+            border none
+        @media smallView
+            flex-direction column
+            justify-content flex-start
+            padding 50px 0 35px
         .round-figure
             background rgba(white, 0.3)
             top 300px
             right 93px
+            @media mediumView
+                display none
         .square-figure
             background rgba(white, 0.3)
             top 100px
             right 105px
+            @media mediumView
+                display none
             &.square-rotate
                 transform rotate(45deg)
                 top 440px
@@ -2111,24 +2129,49 @@
             border-color rgba(white, 0.3) transparent transparent transparent
             top 70px
             right 365px
+            @media mediumView
+                display none
         &-info
             flex 0 0 540px
             box-sizing border-box
             padding-left 100px
             font-family fontAvenirReg
+            @media mediumView
+                flex 0 0 300px
+                padding 0
+            @media smallView
+                flex 0 0 auto
+                display flex
+                flex-direction column
+                align-items center
             &_title
                 font-size 36px
                 margin-bottom 55px
+                @media mediumView
+                    font-size 30px
+                @media smallView
+                    margin-bottom 35px
             &-item
                 font-size 20px
+                @media mediumView
+                    font-size 14px
+                @media smallView
+                    flex-direction column
                 &:not(:last-child)
                     margin-bottom 10px
+                    @media smallView
+                        margin-bottom 25px
                 &_icon
                     flex 0 0 30px
                     height 30px
                     border-radius (30px / 2)
                     margin-right 19px
                     background rgba(white, 0.3)
+                    @media mediumView
+                        margin-right 10px
+                    @media smallView
+                        margin 0 0 5px
+                        width 30px
                 a
                     text-decoration none
                     color white        
@@ -2144,55 +2187,129 @@
     background url(../img/first-bg.jpg) no-repeat center
     background-size cover
     position relative
-    &:before,
-    &:after
-        content ''
-        position absolute
-        height 100%
-        width 50%
-        opacity 0.3
-    &:before
-        left 0
-        background yellowColor2
-    &:after
-        right 0
-        background greenColor
+    @media mediumView
+        flex-direction column
+    @media smallView
+        background url(../img/first-bg-small.jpg) no-repeat center
+        background-size cover
+    &_top-logo
+        flex 0 0 55px
+        @media largeView
+            display none
+    &_bottom-medium
+        flex 0 0 35px
+        background rgba(yellowColor, 0.55)
+        @media largeView
+            display none
+    &-place
+        flex 0 0 50%
+        box-sizing border-box
+        @media mediumView
+            flex 1 0 auto
+            padding 0 20px
+        &.place-1
+            background rgba(yellowColor2, 0.3)
+        &.place-2
+            background rgba(greenColor, 0.3)
     &-link
         flex 0 0 580px
         position relative
         color white
         z-index 1
         text-decoration none
-        padding 175px 0 90px
+        padding-top 40px
+        @media mediumView
+            flex 1 0 auto
+            padding 0
+        .first-section-place.place-1 &
+            background yellowColor2
+        .first-section-place.place-2 &
+            background greenColor
+        .square-figure
+            background rgba(white, 0.3)
+            width 13px
+            height 13px
+            &.pos-1
+                left 85px
+                top 138px
+            &.pos-2
+                left 280px
+                bottom 185px
+                @media mediumView
+                    display none
+            &.square-rotate
+                transform rotate(45deg)
+                right 165px
+                top 85px
+        .round-figure
+            background rgba(white, 0.3)
+            left 220px
+            top 207px
+            width 14px
+            height 14px
+        .bottom-triangle-figure-2
+            border-color rgba(white, 0.3) transparent transparent transparent
+            left 110px
+            bottom 175px
+            @media mediumView
+                display none
+        .right-triangle-figure
+            border-color transparent transparent transparent rgba(white, 0.3)
+            left 413px
+            bottom 113px
+            @media mediumView
+                display none
         .logo
             position absolute
             left 29px
             top 24px
-        &:first-of-type
-            background yellowColor2
-        &:last-of-type
-            background greenColor
+            @media mediumView
+                display none
         &-info
+            flex 0 0 440px
+            @media mediumView
+                flex 0 0 auto
             .icon
                 margin-bottom 35px
+                @media smallView
+                    display none
             &_title
                 text-transform uppercase
                 font-size 14px
                 font-family fontMedium
                 letter-spacing 7px
                 margin-bottom 20px
-                .first-section-link:first-of-type &
+                @media smallView
+                    font-size 12px
+                    letter-spacing 4px
+                    margin-bottom 15px
+                .first-section-place.place-1 &
                     color #b17d12
-                .first-section-link:last-of-type &
+                .first-section-place.place-2 &
                     color #157a36
             &_desc
                 font-size 30px
                 font-family fontLight
                 letter-spacing 1px
                 line-height 1.2
+                @media smallView
+                    font-size 22px
         &_date
             text-transform uppercase
             font-size 12px
+            @media mediumView
+                display none
+        &_button
+            box-sizing border-box
+            height 34px
+            flex 0 0 34px
+            width 111px
+            border 1px solid rgba(white, 0.5)
+            margin-top 25px
+            &.yellow-button
+                background #f7b52e
+            @media largeView
+                display none
     .line-1
         position absolute
         width 100%
@@ -2201,6 +2318,8 @@
         top 95px
         z-index 2
         background rgba(white, 0.2)   
+        @media mediumView
+            display none
     .line-2
         position absolute
         width 100%
@@ -2208,7 +2327,10 @@
         left 0    
         bottom 71px
         z-index 2
-        background rgba(white, 0.2)        
+        background rgba(white, 0.2)  
+        @media mediumView
+            display none      
+    
 
 
 
