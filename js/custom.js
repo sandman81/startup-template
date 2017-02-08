@@ -268,7 +268,6 @@ $(function(){
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
-        return false;  
     });
 
     $('.js-top-button-2').bind('click', function (e) {
@@ -277,7 +276,6 @@ $(function(){
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
-        return false;  
     });
 
     $('.js-top-button-3').bind('click', function (e) {
@@ -285,8 +283,7 @@ $(function(){
        var scroll = $(".graduates-section").offset().top - 92;
        $('body,html').animate({
             scrollTop: scroll
-        }, 500);
-        return false;  
+        }, 500);  
     });
 
     $('.js-top-button-4').bind('click', function (e) {
@@ -294,8 +291,7 @@ $(function(){
        var scroll = $(".contacts-section").offset().top;
        $('body,html').animate({
             scrollTop: scroll
-        }, 500);
-        return false;  
+        }, 500); 
     });
 
     $('.js-register-button').bind('click', function (e) {
@@ -303,7 +299,6 @@ $(function(){
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
-        return false;  
     });
 
     $('.js-info-button-1').bind('click', function (e) {
@@ -311,15 +306,13 @@ $(function(){
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
-        return false;  
     });
 
     $('.js-info-button-2').bind('click', function (e) {
        var scroll = $(".programm-content").offset().top - 92;
        $('body,html').animate({
             scrollTop: scroll
-        }, 500);
-        return false;  
+        }, 500); 
     });
 
     $('.js-info-button-3').bind('click', function (e) {
@@ -327,7 +320,6 @@ $(function(){
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
-        return false;  
     });
 
     $('.js-info-button-4').bind('click', function (e) {
@@ -335,7 +327,6 @@ $(function(){
        $('body,html').animate({
             scrollTop: scroll
         }, 500);
-        return false;  
     });
 
     $('.js-about-scroll-button').bind('click', function (e) {
