@@ -1312,7 +1312,7 @@
                     display block
                     text-align center
                     &:not(:last-child)
-                        margin-bottom 75px
+                        margin-bottom 50px
                     > div
                         align-items center
                 &:before
@@ -1439,6 +1439,8 @@
                         width 210px
                         flex 0 0 auto
                         font-size 14px
+                    @media smallView
+                        font-size 12px
                     span
                         font-family fontAvenirDemi
                         color blueColor2
@@ -1861,6 +1863,8 @@
                         margin-bottom 45px
                 @media smallView
                     width 100%
+                    &:not(:last-child)
+                        margin-bottom 25px
                 label
                     margin-right 10px
                 .form-text
